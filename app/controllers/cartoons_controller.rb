@@ -1,4 +1,7 @@
 class CartoonsController < ApplicationController
+
+  before_action :authenticated_user, except: [:index, :show]
+
   def index
     @cartoons = Cartoon.all
   end
