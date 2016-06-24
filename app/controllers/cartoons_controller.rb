@@ -22,6 +22,7 @@ class CartoonsController < ApplicationController
   end
 
   def edit
+    @cartoon = Cartoon.find(params[:id])
   end
 
   def update
@@ -29,7 +30,9 @@ class CartoonsController < ApplicationController
   end
 
   def destroy
-    
+    @cartoon = Cartoon.find(params[:id])
+    @cartoon.destroy
+    redirect_to cartoons_path, notice: "Post was deleted!"
   end
 
 private

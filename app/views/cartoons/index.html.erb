@@ -3,6 +3,8 @@
 <% @cartoons.each do |cartoon| %>
   <p><%= link_to cartoon.title, cartoon_path(cartoon) %></p>
   <p><%= cartoon.content %></p>
+  <%= link_to "Delete", cartoon, method: :delete, data: { confirm: "Are you sure?"}  %>
+  <%= link_to "Edit", edit_cartoon_path(cartoon) %>
   <hr>
 <% end %>
 
