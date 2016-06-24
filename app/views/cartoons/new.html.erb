@@ -1,16 +1,5 @@
 <h1>Add New Anime</h1>
 
-<%= form_for @cartoon do |f| %>
-  <div>
-  <%= f.label :title %> <br>
-  <%= f.text_field :title %>
-  </div>
-  <br>
-  <div>
-  <%= f.label :content %> <br>
-  <%= f.text_area :content %>
-  </div>
+<%= render 'form', cartoon: @cartoon %>
 
-  <%= f.submit "Submit" %>
-
-<% end %>
+<%= link_to "Back", cartoons_path %>
