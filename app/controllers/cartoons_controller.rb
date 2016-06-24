@@ -11,6 +11,32 @@ class CartoonsController < ApplicationController
     @cartoon = Cartoon.new
   end
 
+  def create
+    @cartoon = Cartoon.new(cartoons_params)
+
+    if @cartoon.save
+      redirect_to cartoons_path, notice: "Your post is succesfully updated!"
+    else
+      render "new"
+    end
+  end
+
   def edit
   end
+
+  def update
+    #code
+  end
+
+  def destroy
+    
+  end
+
+private
+
+def cartoons_params
+  params.require(:cartoon).permit(:title, :content)
+end
+
+
 end
