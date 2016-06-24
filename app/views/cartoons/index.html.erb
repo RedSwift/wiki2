@@ -1,0 +1,9 @@
+<h1>Here are the list of top anime!</h1>
+
+<% @cartoons.each do |cartoon| %>
+  <p><%= link_to cartoon.title, cartoon_path(cartoon) %></p>
+  <p><%= cartoon.content %></p>
+  <hr>
+<% end %>
+
+<%= button_to "Create New Anime", new_cartoon_path, method: 'get' %>
