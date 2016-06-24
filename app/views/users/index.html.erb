@@ -3,4 +3,9 @@
 <% @user.each do |user| %>
   <p><%= user.email %></p>
   <p><%= user.password_digest %></p>
+  <%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+<hr>
 <% end %>
+
+
+<%= link_to "Create New User", new_user_path %>
