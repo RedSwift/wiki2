@@ -26,7 +26,13 @@ class CartoonsController < ApplicationController
   end
 
   def update
-    #code
+    @cartoon = Cartoon.find(params[:id])
+
+    if @cartoon.update_attributes(cartoons_params)
+      redirect_to cartoons_path, notice: "Post updated!"
+    else
+      render "edit", notice: "Post update failed!"
+    end
   end
 
   def destroy
